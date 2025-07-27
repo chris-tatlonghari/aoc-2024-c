@@ -32,7 +32,7 @@ int main() {
         sum += abs(list1[i] - list2[i]);
     }
     
-    printf("%d\n", sum);
+    printf("Part 1 solution is: %d\n", sum);
 
     return 0;
 }
