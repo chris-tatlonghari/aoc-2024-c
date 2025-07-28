@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define INPUT_SIZE 1000
+
 int compare_asc(const void *a, const void *b) {
     return (*(int*)a - *(int*)b);
 }
 
 int main() {
-    FILE *file = fopen("input.txt", "r");
-    int list1[1000], list2[1000];
+    FILE *file = fopen("day1.txt", "r");
+    int list1[INPUT_SIZE], list2[INPUT_SIZE];
     int count = 0, sum = 0;
 
     if (file != NULL) {
@@ -28,7 +30,7 @@ int main() {
     qsort(list1, count, sizeof(int), compare_asc);
     qsort(list2, count, sizeof(int), compare_asc);
 
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < INPUT_SIZE; i++) {
         sum += abs(list1[i] - list2[i]);
     }
     
